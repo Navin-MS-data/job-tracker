@@ -62,31 +62,17 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-[#f7f5ff]">
+    <div className="min-h-screen bg-[#f9f8f6]">
       {/* ── Header ── */}
-      <header className="bg-white border-b border-violet-100 sticky top-0 z-30">
+      <header className="bg-white border-b border-stone-200 sticky top-0 z-30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Brand */}
             <div className="flex items-center gap-3">
-              <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-violet-200">
-                <svg
-                  className="w-4.5 h-4.5 text-violet-600"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
-                  />
-                </svg>
-              </div>
+              <img src="/logoipsum-415.svg" alt="Job Tracker logo" width={32} height={32} />
               <div>
                 <h1 className="text-base font-semibold text-gray-900 leading-tight">Job Tracker</h1>
-                <p className="text-xs text-violet-300 leading-tight hidden sm:block">
+                <p className="text-xs text-stone-400 leading-tight hidden sm:block">
                   Job Application Tracker
                 </p>
               </div>
@@ -95,13 +81,13 @@ export default function Home() {
             {/* Right side */}
             <div className="flex items-center gap-3">
               {isLoaded && applications.length > 0 && (
-                <p className="text-xs text-violet-300 hidden sm:block">
+                <p className="text-xs text-stone-400 hidden sm:block">
                   {applications.length} application{applications.length !== 1 ? "s" : ""} tracked
                 </p>
               )}
               <button
                 onClick={handleOpenAdd}
-                className="inline-flex items-center gap-2 rounded-lg bg-violet-500 px-3.5 py-2 text-sm font-medium text-white transition-colors hover:bg-violet-600 focus:outline-none focus:ring-2 focus:ring-violet-300 focus:ring-offset-2 shadow-sm"
+                className="inline-flex items-center gap-2 rounded-lg bg-stone-900 px-3.5 py-2 text-sm font-medium text-white transition-colors hover:bg-stone-800 focus:outline-none focus:ring-2 focus:ring-stone-400 focus:ring-offset-2 shadow-sm"
               >
                 <svg
                   className="w-4 h-4"
@@ -123,8 +109,8 @@ export default function Home() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Page title */}
         <div className="mb-6">
-          <h2 className="text-2xl font-bold text-slate-700">Dashboard</h2>
-          <p className="text-sm text-violet-300 mt-1">
+          <h2 className="text-2xl font-bold text-stone-800">Dashboard</h2>
+          <p className="text-sm text-stone-400 mt-1">
             Track and manage all your job applications in one place.
           </p>
         </div>
@@ -134,11 +120,11 @@ export default function Home() {
           <div className="animate-pulse space-y-4">
             <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3">
               {Array.from({ length: 7 }).map((_, i) => (
-                <div key={i} className="h-20 rounded-xl bg-violet-100" />
+                <div key={i} className="h-20 rounded-xl bg-stone-200" />
               ))}
             </div>
-            <div className="h-10 rounded-xl bg-violet-100 w-full" />
-            <div className="h-64 rounded-xl bg-violet-100 w-full" />
+            <div className="h-10 rounded-xl bg-stone-200 w-full" />
+            <div className="h-64 rounded-xl bg-stone-200 w-full" />
           </div>
         ) : (
           <>
@@ -152,10 +138,10 @@ export default function Home() {
             {/* Applications Table */}
             {applications.length === 0 ? (
               /* Full empty state when there are zero applications */
-              <div className="rounded-2xl border border-dashed border-violet-200 bg-white flex flex-col items-center justify-center py-24 px-8 text-center">
-                <div className="flex items-center justify-center w-20 h-20 rounded-full bg-violet-100 mb-6">
+              <div className="rounded-2xl border border-dashed border-stone-300 bg-white flex flex-col items-center justify-center py-24 px-8 text-center">
+                <div className="flex items-center justify-center w-20 h-20 rounded-full bg-stone-100 mb-6">
                   <svg
-                    className="w-10 h-10 text-violet-400"
+                    className="w-10 h-10 text-stone-400"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -168,14 +154,14 @@ export default function Home() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-slate-700 mb-2">No applications yet</h3>
-                <p className="text-sm text-slate-400 max-w-sm mb-8">
+                <h3 className="text-lg font-semibold text-stone-800 mb-2">No applications yet</h3>
+                <p className="text-sm text-stone-500 max-w-sm mb-8">
                   Start tracking your job search by adding your first application. Keep tabs on
                   every company, position, and status all in one place.
                 </p>
                 <button
                   onClick={handleOpenAdd}
-                  className="inline-flex items-center gap-2 rounded-lg bg-violet-500 px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-violet-600 focus:outline-none focus:ring-2 focus:ring-violet-300 focus:ring-offset-2 shadow-sm"
+                  className="inline-flex items-center gap-2 rounded-lg bg-stone-900 px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-stone-800 focus:outline-none focus:ring-2 focus:ring-stone-400 focus:ring-offset-2 shadow-sm"
                 >
                   <svg
                     className="w-4 h-4"
@@ -202,8 +188,8 @@ export default function Home() {
       </main>
 
       {/* ── Footer ── */}
-      <footer className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mt-8 border-t border-violet-100">
-        <p className="text-xs text-violet-300 text-center">
+      <footer className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mt-8 border-t border-stone-200">
+        <p className="text-xs text-stone-400 text-center">
           Job Tracker · Data is stored locally in your browser.
         </p>
       </footer>

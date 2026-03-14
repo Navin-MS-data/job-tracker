@@ -2,33 +2,33 @@ import { ApplicationStatus } from "../types";
 
 const statusConfig: Record<ApplicationStatus, { bg: string; text: string; dot: string }> = {
   Applied: {
-    bg: "bg-sky-100",
+    bg: "bg-sky-50",
     text: "text-sky-600",
     dot: "bg-sky-300",
   },
   "Phone Screen": {
-    bg: "bg-orange-100",
-    text: "text-orange-500",
-    dot: "bg-orange-300",
+    bg: "bg-amber-50",
+    text: "text-amber-600",
+    dot: "bg-amber-300",
   },
   Interview: {
-    bg: "bg-violet-100",
-    text: "text-violet-500",
-    dot: "bg-violet-300",
+    bg: "bg-indigo-50",
+    text: "text-indigo-500",
+    dot: "bg-indigo-300",
   },
   Offer: {
-    bg: "bg-emerald-100",
-    text: "text-emerald-600",
-    dot: "bg-emerald-300",
+    bg: "bg-teal-50",
+    text: "text-teal-600",
+    dot: "bg-teal-300",
   },
   Rejected: {
-    bg: "bg-rose-100",
-    text: "text-rose-500",
+    bg: "bg-rose-50",
+    text: "text-rose-400",
     dot: "bg-rose-300",
   },
   Withdrawn: {
     bg: "bg-stone-100",
-    text: "text-stone-500",
+    text: "text-stone-400",
     dot: "bg-stone-300",
   },
 };

@@ -20,12 +20,12 @@ export default function DeleteConfirmModal({
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       {/* Backdrop */}
-      <div className="absolute inset-0 bg-violet-950/20 backdrop-blur-sm" onClick={onCancel} />
+      <div className="absolute inset-0 bg-stone-950/20 backdrop-blur-sm" onClick={onCancel} />
 
       {/* Modal */}
-      <div className="relative w-full max-w-sm rounded-2xl bg-white shadow-2xl p-6 border border-rose-100">
+      <div className="relative w-full max-w-sm rounded-2xl bg-white shadow-xl p-6 border border-stone-200">
         {/* Icon */}
-        <div className="flex items-center justify-center w-12 h-12 rounded-full bg-rose-100 mx-auto mb-4">
+        <div className="flex items-center justify-center w-12 h-12 rounded-full bg-rose-50 mx-auto mb-4">
           <svg
             className="w-6 h-6 text-rose-400"
             fill="none"
@@ -42,13 +42,15 @@ export default function DeleteConfirmModal({
         </div>
 
         {/* Title */}
-        <h2 className="text-lg font-semibold text-gray-800 text-center mb-2">Delete Application</h2>
+        <h2 className="text-lg font-semibold text-stone-800 text-center mb-2">
+          Delete Application
+        </h2>
 
         {/* Description */}
-        <p className="text-sm text-gray-400 text-center mb-6">
+        <p className="text-sm text-stone-500 text-center mb-6">
           Are you sure you want to delete the{" "}
-          <span className="font-medium text-gray-600">{position}</span> role at{" "}
-          <span className="font-medium text-gray-600">{companyName}</span>? This action cannot be
+          <span className="font-medium text-stone-700">{position}</span> role at{" "}
+          <span className="font-medium text-stone-700">{companyName}</span>? This action cannot be
           undone.
         </p>
 
@@ -56,7 +58,7 @@ export default function DeleteConfirmModal({
         <div className="flex gap-3">
           <button
             onClick={onCancel}
-            className="flex-1 rounded-lg border border-violet-200 bg-white px-4 py-2.5 text-sm font-medium text-violet-600 transition-colors hover:bg-violet-50"
+            className="flex-1 rounded-lg border border-stone-200 bg-white px-4 py-2.5 text-sm font-medium text-stone-600 transition-colors hover:bg-stone-50"
           >
             Cancel
           </button>

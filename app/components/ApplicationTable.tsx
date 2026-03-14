@@ -25,14 +25,14 @@ function SortIcon({ field, sortField, sortDir }: SortIconProps) {
   return (
     <span className="ml-1 inline-flex flex-col gap-0.5">
       <svg
-        className={`w-2.5 h-2.5 transition-colors ${active && sortDir === "asc" ? "text-indigo-600" : "text-gray-300"}`}
+        className={`w-2.5 h-2.5 transition-colors ${active && sortDir === "asc" ? "text-stone-700" : "text-stone-300"}`}
         viewBox="0 0 10 6"
         fill="currentColor"
       >
         <path d="M5 0L10 6H0L5 0Z" />
       </svg>
       <svg
-        className={`w-2.5 h-2.5 transition-colors ${active && sortDir === "desc" ? "text-indigo-600" : "text-gray-300"}`}
+        className={`w-2.5 h-2.5 transition-colors ${active && sortDir === "desc" ? "text-stone-700" : "text-stone-300"}`}
         viewBox="0 0 10 6"
         fill="currentColor"
       >
@@ -116,15 +116,15 @@ export default function ApplicationTable({
   }, [applications, activeFilter, search, sortField, sortDir]);
 
   const thBase =
-    "px-4 py-3 text-left text-xs font-semibold text-violet-400 uppercase tracking-wider select-none";
-  const thSortable = `${thBase} cursor-pointer hover:text-gray-800 transition-colors`;
+    "px-4 py-3 text-left text-xs font-semibold text-stone-400 uppercase tracking-wider select-none";
+  const thSortable = `${thBase} cursor-pointer hover:text-stone-700 transition-colors`;
 
   return (
     <div className="flex flex-col gap-4">
       {/* Search bar */}
       <div className="relative">
         <svg
-          className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-violet-300 pointer-events-none"
+          className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-stone-400 pointer-events-none"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -141,12 +141,12 @@ export default function ApplicationTable({
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Search by company, position, or location…"
-          className="w-full rounded-xl border border-violet-200 bg-white pl-10 pr-4 py-2.5 text-sm text-slate-700 placeholder-violet-300 outline-none transition-all focus:border-violet-300 focus:ring-2 focus:ring-violet-100 shadow-sm"
+          className="w-full rounded-xl border border-stone-200 bg-white pl-10 pr-4 py-2.5 text-sm text-stone-700 placeholder-stone-300 outline-none transition-all focus:border-stone-400 focus:ring-2 focus:ring-stone-100 shadow-sm"
         />
         {search && (
           <button
             onClick={() => setSearch("")}
-            className="absolute right-3 top-1/2 -translate-y-1/2 text-violet-300 hover:text-violet-500 transition-colors"
+            className="absolute right-3 top-1/2 -translate-y-1/2 text-stone-400 hover:text-stone-600 transition-colors"
             aria-label="Clear search"
           >
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -163,23 +163,23 @@ export default function ApplicationTable({
 
       {/* Result count */}
       <div className="flex items-center justify-between">
-        <p className="text-sm text-slate-400">
-          Showing <span className="font-semibold text-slate-600">{filtered.length}</span>{" "}
+        <p className="text-sm text-stone-400">
+          Showing <span className="font-semibold text-stone-600">{filtered.length}</span>{" "}
           {filtered.length === 1 ? "application" : "applications"}
           {activeFilter !== "All" && (
-            <span className="text-violet-300"> · filtered by {activeFilter}</span>
+            <span className="text-stone-400"> · filtered by {activeFilter}</span>
           )}
-          {search && <span className="text-violet-300"> · matching &ldquo;{search}&rdquo;</span>}
+          {search && <span className="text-stone-400"> · matching &ldquo;{search}&rdquo;</span>}
         </p>
       </div>
 
       {/* Table */}
-      <div className="rounded-xl border border-violet-100 bg-white shadow-sm overflow-hidden">
+      <div className="rounded-xl border border-stone-200 bg-white shadow-sm overflow-hidden">
         {filtered.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-16 px-4 text-center">
-            <div className="w-14 h-14 rounded-full bg-gray-100 flex items-center justify-center mb-4">
+            <div className="w-14 h-14 rounded-full bg-stone-100 flex items-center justify-center mb-4">
               <svg
-                className="w-7 h-7 text-gray-400"
+                className="w-7 h-7 text-stone-400"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -192,8 +192,8 @@ export default function ApplicationTable({
                 />
               </svg>
             </div>
-            <p className="text-sm font-medium text-gray-700">No applications found</p>
-            <p className="text-xs text-gray-400 mt-1">
+            <p className="text-sm font-medium text-stone-700">No applications found</p>
+            <p className="text-xs text-stone-400 mt-1">
               {search
                 ? "Try a different search term or clear your filters."
                 : "Add your first application to get started."}
@@ -202,7 +202,7 @@ export default function ApplicationTable({
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full min-w-[640px]">
-              <thead className="bg-violet-50 border-b border-violet-100">
+              <thead className="bg-stone-50 border-b border-stone-200">
                 <tr>
                   <th className={thSortable} onClick={() => handleSort("company")}>
                     <span className="inline-flex items-center">
@@ -236,9 +236,9 @@ export default function ApplicationTable({
                   <th className={`${thBase} text-right`}>Actions</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-violet-50">
+              <tbody className="divide-y divide-stone-100">
                 {filtered.map((app) => (
-                  <tr key={app.id} className="group hover:bg-violet-50/60 transition-colors">
+                  <tr key={app.id} className="group hover:bg-stone-50 transition-colors">
                     {/* Company */}
                     <td className="px-4 py-3.5">
                       <div className="flex flex-col gap-0.5">
@@ -247,7 +247,7 @@ export default function ApplicationTable({
                             href={app.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="font-medium text-sm text-violet-500 hover:text-violet-700 hover:underline transition-colors flex items-center gap-1"
+                            className="font-medium text-sm text-stone-700 hover:text-stone-900 underline underline-offset-2 decoration-stone-300 hover:decoration-stone-600 transition-colors flex items-center gap-1"
                             onClick={(e) => e.stopPropagation()}
                           >
                             {app.company}
@@ -266,19 +266,19 @@ export default function ApplicationTable({
                             </svg>
                           </a>
                         ) : (
-                          <span className="font-medium text-sm text-gray-900">{app.company}</span>
+                          <span className="font-medium text-sm text-stone-800">{app.company}</span>
                         )}
                         {/* Show position on mobile under company */}
-                        <span className="text-xs text-slate-400 sm:hidden">{app.position}</span>
+                        <span className="text-xs text-stone-400 sm:hidden">{app.position}</span>
                       </div>
                     </td>
 
                     {/* Position */}
                     <td className="px-4 py-3.5">
-                      <span className="text-sm text-slate-600">{app.position}</span>
+                      <span className="text-sm text-stone-600">{app.position}</span>
                       {app.notes && (
                         <p
-                          className="text-xs text-slate-300 mt-0.5 truncate max-w-[180px]"
+                          className="text-xs text-stone-400 mt-0.5 truncate max-w-[180px]"
                           title={app.notes}
                         >
                           {app.notes}
@@ -288,8 +288,8 @@ export default function ApplicationTable({
 
                     {/* Location */}
                     <td className="px-4 py-3.5 hidden md:table-cell">
-                      <span className="text-sm text-slate-500">
-                        {app.location || <span className="text-violet-200">—</span>}
+                      <span className="text-sm text-stone-500">
+                        {app.location || <span className="text-stone-300">—</span>}
                       </span>
                     </td>
 
@@ -300,19 +300,19 @@ export default function ApplicationTable({
 
                     {/* Date Applied */}
                     <td className="px-4 py-3.5 hidden sm:table-cell">
-                      <span className="text-sm text-slate-500">{formatDate(app.dateApplied)}</span>
+                      <span className="text-sm text-stone-500">{formatDate(app.dateApplied)}</span>
                     </td>
 
                     {/* Salary */}
                     <td className="px-4 py-3.5 hidden lg:table-cell">
-                      <span className="text-sm text-slate-500">
+                      <span className="text-sm text-stone-500">
                         {app.salary ? (
                           <span>
                             {app.salary}{" "}
-                            <span className="text-xs text-violet-400 font-medium">LPA</span>
+                            <span className="text-xs text-stone-400 font-medium">LPA</span>
                           </span>
                         ) : (
-                          <span className="text-violet-200">—</span>
+                          <span className="text-stone-300">—</span>
                         )}
                       </span>
                     </td>
@@ -324,7 +324,7 @@ export default function ApplicationTable({
                         <button
                           onClick={() => onEdit(app)}
                           title="Edit application"
-                          className="rounded-lg p-1.5 text-slate-400 hover:bg-violet-100 hover:text-violet-600 transition-colors"
+                          className="rounded-lg p-1.5 text-stone-400 hover:bg-stone-100 hover:text-stone-700 transition-colors"
                         >
                           <svg
                             className="w-4 h-4"
@@ -344,7 +344,7 @@ export default function ApplicationTable({
                         <button
                           onClick={() => onDelete(app)}
                           title="Delete application"
-                          className="rounded-lg p-1.5 text-slate-400 hover:bg-rose-100 hover:text-rose-400 transition-colors"
+                          className="rounded-lg p-1.5 text-stone-400 hover:bg-rose-50 hover:text-rose-400 transition-colors"
                         >
                           <svg
                             className="w-4 h-4"
