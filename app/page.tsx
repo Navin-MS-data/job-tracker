@@ -87,7 +87,7 @@ export default function Home() {
               )}
               <button
                 onClick={handleOpenAdd}
-                className="inline-flex items-center gap-2 rounded-lg bg-stone-900 px-3.5 py-2 text-sm font-medium text-white transition-colors hover:bg-stone-800 focus:outline-none focus:ring-2 focus:ring-stone-400 focus:ring-offset-2 shadow-sm"
+                className="inline-flex items-center gap-2 rounded-lg bg-[#0094F7] px-3.5 py-2 text-sm font-medium text-white transition-colors hover:bg-[#007fd4] focus:outline-none focus:ring-2 focus:ring-[#0094F7]/40 focus:ring-offset-2 shadow-sm"
               >
                 <svg
                   className="w-4 h-4"
@@ -161,7 +161,7 @@ export default function Home() {
                 </p>
                 <button
                   onClick={handleOpenAdd}
-                  className="inline-flex items-center gap-2 rounded-lg bg-stone-900 px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-stone-800 focus:outline-none focus:ring-2 focus:ring-stone-400 focus:ring-offset-2 shadow-sm"
+                  className="inline-flex items-center gap-2 rounded-lg bg-[#0094F7] px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-[#007fd4] focus:outline-none focus:ring-2 focus:ring-[#0094F7]/40 focus:ring-offset-2 shadow-sm"
                 >
                   <svg
                     className="w-4 h-4"

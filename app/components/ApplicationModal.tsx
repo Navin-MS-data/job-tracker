@@ -111,7 +111,7 @@ export default function ApplicationModal({
 
   const inputBase =
     "w-full rounded-lg border px-3.5 py-2.5 text-sm text-stone-800 placeholder-stone-300 outline-none transition-all focus:ring-2";
-  const inputNormal = "border-stone-200 bg-white focus:border-stone-400 focus:ring-stone-100";
+  const inputNormal = "border-stone-200 bg-white focus:border-[#0094F7] focus:ring-[#0094F7]/10";
   const inputError = "border-rose-300 bg-rose-50 focus:border-rose-300 focus:ring-rose-100";
 
   return (
@@ -120,14 +120,14 @@ export default function ApplicationModal({
       <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" onClick={onClose} />
 
       {/* Modal Panel */}
-      <div className="relative w-full max-w-lg max-h-[92vh] flex flex-col rounded-2xl bg-white shadow-xl border border-stone-200">
+      <div className="relative w-full max-w-lg max-h-[92vh] flex flex-col rounded-2xl bg-white shadow-xl border border-[#0094F7]/20">
         {/* Header */}
-        <div className="sticky top-0 flex items-center justify-between border-b border-stone-100 bg-white px-6 py-4 shrink-0">
+        <div className="sticky top-0 flex items-center justify-between border-b border-[#0094F7]/15 bg-[#f0f8ff] px-6 py-4 shrink-0 rounded-t-2xl">
           <div>
-            <h2 className="text-lg font-semibold text-gray-900">
+            <h2 className="text-lg font-semibold text-stone-900">
               {editApplication ? "Edit Application" : "Add Application"}
             </h2>
-            <p className="text-xs text-stone-400 mt-0.5">
+            <p className="text-xs text-[#0094F7]/70 mt-0.5">
               {editApplication
                 ? "Update the details for this application."
                 : "Fill in the details for your new job application."}
@@ -135,7 +135,7 @@ export default function ApplicationModal({
           </div>
           <button
             onClick={onClose}
-            className="ml-4 rounded-lg p-1.5 text-stone-400 hover:bg-stone-100 hover:text-stone-600 transition-colors"
+            className="ml-4 rounded-lg p-1.5 text-[#0094F7]/50 hover:bg-[#0094F7]/10 hover:text-[#0094F7] transition-colors"
             aria-label="Close modal"
           >
             <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -154,7 +154,7 @@ export default function ApplicationModal({
           {/* Company */}
           <div>
             <label className="block text-sm font-medium text-stone-600 mb-1.5">
-              Company <span className="text-rose-400">*</span>
+              Company <span className="text-[#0094F7]">*</span>
             </label>
             <input
               type="text"
@@ -169,7 +169,7 @@ export default function ApplicationModal({
           {/* Position */}
           <div>
             <label className="block text-sm font-medium text-stone-600 mb-1.5">
-              Position <span className="text-rose-400">*</span>
+              Position <span className="text-[#0094F7]">*</span>
             </label>
             <input
               type="text"
@@ -213,7 +213,7 @@ export default function ApplicationModal({
           <div className="grid grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-stone-600 mb-1.5">
-                Date Applied <span className="text-rose-400">*</span>
+                Date Applied <span className="text-[#0094F7]">*</span>
               </label>
               <input
                 type="date"
@@ -227,7 +227,7 @@ export default function ApplicationModal({
             </div>
             <div>
               <label className="block text-sm font-medium text-stone-600 mb-1.5">
-                Salary <span className="text-stone-400 font-normal">(LPA)</span>
+                Salary <span className="text-[#0094F7]/60 font-normal">(LPA)</span>
               </label>
               <input
                 type="text"
@@ -269,13 +269,13 @@ export default function ApplicationModal({
             <button
               type="button"
               onClick={onClose}
-              className="flex-1 rounded-lg border border-stone-200 bg-white px-4 py-2.5 text-sm font-medium text-stone-600 transition-colors hover:bg-stone-50"
+              className="flex-1 rounded-lg border border-[#0094F7]/30 bg-white px-4 py-2.5 text-sm font-medium text-[#0094F7] transition-colors hover:bg-[#e8f4ff]"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="flex-1 rounded-lg bg-stone-900 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-stone-800 focus:outline-none focus:ring-2 focus:ring-stone-400 focus:ring-offset-2"
+              className="flex-1 rounded-lg bg-[#0094F7] px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#007fd4] focus:outline-none focus:ring-2 focus:ring-[#0094F7]/40 focus:ring-offset-2"
             >
               {editApplication ? "Save Changes" : "Add Application"}
             </button>

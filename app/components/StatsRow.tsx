@@ -52,8 +52,8 @@ export default function StatsRow({ applications, activeFilter, onFilterChange }:
         onClick={() => onFilterChange("All")}
         className={`flex flex-col gap-1.5 rounded-xl border p-4 text-left transition-all hover:shadow-sm cursor-pointer ${
           activeFilter === "All"
-            ? "border-stone-900 bg-stone-900 shadow-sm"
-            : "border-stone-200 bg-white hover:border-stone-300"
+            ? "border-[#0094F7] bg-[#0094F7] shadow-sm"
+            : "border-stone-200 bg-white hover:border-[#0094F7]/40"
         }`}
       >
         <span
@@ -65,7 +65,7 @@ export default function StatsRow({ applications, activeFilter, onFilterChange }:
         </span>
         <span
           className={`text-xs font-medium ${
-            activeFilter === "All" ? "text-stone-400" : "text-stone-400"
+            activeFilter === "All" ? "text-white/70" : "text-stone-400"
           }`}
         >
           Total
@@ -85,7 +85,7 @@ export default function StatsRow({ applications, activeFilter, onFilterChange }:
             className={`flex flex-col gap-1.5 rounded-xl border p-4 text-left transition-all hover:shadow-sm cursor-pointer ${
               isActive
                 ? `${styles.active} shadow-sm`
-                : "border-stone-200 bg-white hover:border-stone-300"
+                : "border-stone-200 bg-white hover:border-[#0094F7]/40"
             }`}
           >
             <div className="flex items-center gap-2">
